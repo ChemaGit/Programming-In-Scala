@@ -1,0 +1,2 @@
+After we've seen classes and objects, it'll be good to look at Scala's basic types and operations. Java's basic types and operators have the same meaning in Scala.
+But there are some interesting differences.
