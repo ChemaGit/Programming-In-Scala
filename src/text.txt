@@ -1,0 +1,5 @@
+hola
+bienvenido a Scala
+Este es un ejemplo
+para leer un fichero
+alojado en tu disco local
