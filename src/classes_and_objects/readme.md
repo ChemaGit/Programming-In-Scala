@@ -1,1 +1,1 @@
-This chapter is about classes, fields, methods, semicolon inference, and singleton objects, including how to use them to write and run a Scala application. 
+This chapter is about classes, fields, methods, semicolon inference, and singleton objects, including how to use them to write and run a Scala application.  
