@@ -1,6 +1,6 @@
 package assertions_and_tests
 
-object Assertions {
+object Assertions extends App{
   //Listing 14.1 - Using an assertion.
   def testAssert(num: Int): String = {
     if(num < 0) {
@@ -25,9 +25,9 @@ object Assertions {
     "Ava"
   }  
   
-  def main(args: Array[String]) {
+  
     val num = -1
     testAssert(num)    
-  }
+  
   
 }
