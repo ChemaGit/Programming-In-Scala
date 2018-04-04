@@ -6,26 +6,26 @@ object Assertions {
     if(num < 0) {
       assert(num < 0)
     }
-    "Brandi Love"
+    "Love"
   }
   
   //Listing 14.1 - Using an assertion with explanation
   def testAssertExplanation(num: Int): String = {
     if(num < 0) {
-      assert(num < 0, "Julia Ann")
+      assert(num < 0, "Julia")
     }
-    "Thimea Bella"    
+    "Bella"    
   }
   
   //Listing 14.2 - Using ensuring to assert a function's result.
   def testEnsuring(num: Int): String = {
     if(num < 0) {
-      println("Dillion Harper")
+      println("Dillion")
     } ensuring(num >= 0) 
-    "Deauxma"
+    "Ava"
   }  
   
-  def main(args: Array[String]) = {
+  def main(args: Array[String]) {
     val num = -1
     testAssert(num)    
   }
