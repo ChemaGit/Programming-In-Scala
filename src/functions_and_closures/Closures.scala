@@ -21,7 +21,7 @@ object Closures {
   def echo(args: String*) =
     for(arg <- args) println(arg)
   
-  val arr = Array("Julia Ann", "Brandi Love", "Kendra Lust", "Ava Addams")  
+  val arr = Array("Julia", "Love", "Kendra", "Ava")  
   
   def speed(distance: Float, time: Float): Float =
     distance / time
@@ -55,7 +55,7 @@ object Closures {
     echo()
     echo("Ava Devine")
     //passing Strings
-    echo("Ava Devine","Mercedes","Deauxma")
+    echo("Ava","Mercedes","Ana")
     //passing an Array
     echo(arr: _*)
     println(speed(100,10))
