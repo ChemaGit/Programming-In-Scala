@@ -53,7 +53,7 @@ object Closures {
      */    
     println("*****SPECIAL FUNCTIONS CALL FORM******************")
     echo()
-    echo("Ava Devine")
+    echo("Ava")
     //passing Strings
     echo("Ava","Mercedes","Ana")
     //passing an Array
