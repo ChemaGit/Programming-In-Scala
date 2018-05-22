@@ -1,4 +1,4 @@
-package example
+package working_with_lists
 
 object FirstOrderMethodOnClassList {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
@@ -132,18 +132,20 @@ object FirstOrderMethodOnClassList {
 	
 	msort((x: Int, y: Int) => x < y)(List(5, 7, 1, 3))
                                                   //> res31: List[Int] = List(1, 3, 5, 7)
+  msort((x: Int, y: Int) => x > y)(List(5, 7, 1, 3))
+                                                  //> res32: List[Int] = List(7, 5, 3, 1)
 
   val intSort = msort((x: Int, y: Int) => x < y) _//> intSort  : List[Int] => List[Int] = example.FirstOrderMethodOnClassList$$$L
-                                                  //| ambda$23/2081853534@2a2d45ba
+                                                  //| ambda$24/707610042@2a5ca609
                                                   
   val reverseIntSort = msort((x: Int, y: Int) => x > y) _
                                                   //> reverseIntSort  : List[Int] => List[Int] = example.FirstOrderMethodOnClassL
-                                                  //| ist$$$Lambda$25/551734240@68be2bc2
+                                                  //| ist$$$Lambda$26/1757293506@28feb3fa
                                                   
   val mixedInts = List(4, 1, 9, 0, 5, 8, 3, 6, 2, 7)
                                                   //> mixedInts  : List[Int] = List(4, 1, 9, 0, 5, 8, 3, 6, 2, 7)
   
-  intSort(mixedInts)                              //> res32: List[Int] = List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-  reverseIntSort(mixedInts)                       //> res33: List[Int] = List(9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+  intSort(mixedInts)                              //> res33: List[Int] = List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  reverseIntSort(mixedInts)                       //> res34: List[Int] = List(9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
   
 }
