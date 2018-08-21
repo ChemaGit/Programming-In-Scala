@@ -1,4 +1,4 @@
-package example
+package working_with_other_collections
 
 object SetsAndMaps {
   /**
@@ -132,4 +132,37 @@ object SetsAndMaps {
   /*
   * Default sets and maps
   */
+    //Default immutable set implementations
+		//Number of elements Implementation
+		//0                   scala.collection.immutable.EmptySet
+		//1                   scala.collection.immutable.Set1
+		//2                   scala.collection.immutable.Set2
+		//3                   scala.collection.immutable.Set3
+		//4                   scala.collection.immutable.Set4
+		//5                   or more scala.collection.immutable.HashSet
+		
+		//Default immutable map implementations
+		//Number of elements Implementation
+		//0                   scala.collection.immutable.EmptyMap
+		//1                   scala.collection.immutable.Map1
+		//2                   scala.collection.immutable.Map2
+		//3                   scala.collection.immutable.Map3
+		//4                   scala.collection.immutable.Map4
+		//5                   or more scala.collection.immutable.HashMap
+  
+  /*
+  * Sorted Sets and Maps
+  */
+  import scala.collection.immutable.TreeSet
+  val ts = TreeSet(9, 3, 1, 8, 0, 2, 7, 4, 6, 5)  //> ts  : scala.collection.immutable.TreeSet[Int] = TreeSet(0, 1, 2, 3, 4, 5, 6
+                                                  //| , 7, 8, 9)
+  val cs = TreeSet('f', 'u', 'n')                 //> cs  : scala.collection.immutable.TreeSet[Char] = TreeSet(f, n, u)
+  
+  
+  import scala.collection.immutable.TreeMap
+  var tm = TreeMap(3 -> 'x', 1 -> 'x', 4 -> 'x')  //> tm  : scala.collection.immutable.TreeMap[Int,Char] = Map(1 -> x, 3 -> x, 4 
+                                                  //| -> x)
+  tm += (2 -> 'x')
+  tm                                              //> res30: scala.collection.immutable.TreeMap[Int,Char] = Map(1 -> x, 2 -> x, 3
+                                                  //|  -> x, 4 -> x)
 }
