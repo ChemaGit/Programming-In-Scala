@@ -28,4 +28,31 @@ object InitializingCollections {
   //elements of the list with the TreeSet's ++ operator:
   val treeSet = TreeSet[String]() ++ colors       //> treeSet  : scala.collection.immutable.TreeSet[String] = TreeSet(blue, green
                                                   //| , red, yellow)
+
+  /*
+  * Converting to array or list
+  * If you need to initialize a list or array with another collection, on the other
+  * hand, it is quite straightforward. As you’ve seen previously, to initialize a
+  * new list with another collection, simply invoke toList on that collection
+  */
+  treeSet.toList                                  //> res4: List[String] = List(blue, green, red, yellow)
+  //Or, if you need an array, invoke toArray
+  treeSet.toArray                                 //> res5: Array[String] = Array(blue, green, red, yellow)
+  
+  /*
+  * Converting between mutable and immutable sets and maps
+  */
+  import scala.collection.mutable
+  treeSet                                         //> res6: scala.collection.immutable.TreeSet[String] = TreeSet(blue, green, red
+                                                  //| , yellow)
+  val mutaSet = mutable.Set.empty ++= treeSet     //> mutaSet  : scala.collection.mutable.Set[String] = Set(red, blue, green, yel
+                                                  //| low)
+  
+  val immutaSet = Set.empty ++ mutaSet            //> immutaSet  : scala.collection.immutable.Set[String] = Set(red, blue, green,
+                                                  //|  yellow)
+  
+  //You can use the same technique to convert between mutable and immutable maps
+  val muta = mutable.Map("i" -> 1, "ii" -> 2)     //> muta  : scala.collection.mutable.Map[String,Int] = Map(ii -> 2, i -> 1)
+  val immu = Map.empty ++ muta                    //> immu  : scala.collection.immutable.Map[String,Int] = Map(ii -> 2, i -> 1)
+                                                                                            
 }
