@@ -1,4 +1,4 @@
-package mutable_objects
+package mutable_objects.case_study
 
 object DiscreteEventSimulation {
   
