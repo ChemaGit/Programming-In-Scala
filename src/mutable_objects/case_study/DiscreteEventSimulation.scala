@@ -44,7 +44,7 @@ package mutable_objects.case_study
  * The Simulation API
  * It consists of class Simulation
  */
-object DiscreteEventSimulation {
+object DiscreteEventSimulation extends App{
   
   abstract class Simulation {
     //A discrete event simulation performs user-defined actions at specified times.
@@ -162,5 +162,60 @@ object DiscreteEventSimulation {
       }
       wire addAction probeAction
     }
-  }  
+  }
+  
+  abstract class CircuitSimulation extends BasicCircuitSimulation {
+    def halfAdder(a: Wire, b: Wire, s: Wire, c: Wire) = {
+      val d, e = new Wire
+      orGate(a, b, d)
+      andGate(a, b, c)
+      inverter(c, e) 
+      andGate(d, e, s)
+    }
+    
+    def fullAdder(a: Wire, b: Wire, cin: Wire, sum: Wire, cout: Wire) = {
+      val s, c1, c2 = new Wire
+      halfAdder(a, cin, s, c1)
+      halfAdder(b, s, sum, c2)
+      orGate(c1, c2, cout)
+    }
+  }
+  
+  object MySimulation extends CircuitSimulation {
+    def InverterDelay = 1
+    def AndGateDelay = 3
+    def OrGateDelay = 5
+  }
+  
+  import MySimulation._
+  val input1, input2, sum, carry = new Wire
+  
+  probe("sum", sum)
+  
+  probe("carry", carry)
+  
+  halfAdder(input1, input2, sum, carry)
+  
+  input1 setSignal true
+  
+  run()
+  
+  input2 setSignal true
+  
+  run()
+  
+  /**
+   * This chapter brought together two techniques that seem disparate at first:
+   * mutable state and higher-order functions. Mutable state was used to simulate
+   * physical entities whose state changes over time. Higher-order functions were
+   * used in the simulation framework to execute actions at specified points in
+   * simulated time. They were also used in the circuit simulations as triggers that
+   * associate actions with state changes.
+   */  
+  
+  /**
+   * If you feel like staying a bit longer, you might want to try more simulation
+   * examples. You can combine half-adders and full-adders to create larger
+   * circuits, or design new circuits from the basic gates defined so far and simulate them.
+   */  
 }
